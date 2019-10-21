@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/schoolDetail/schoolDetail",
+    "pages/mySchool/mySchool",
+    "pages/myQuestion/myQuestion",
+    "pages/mine/mine",
+    "pages/putQuestion/putQuestion",
+    "pages/problem/problem",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "校查查",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#28B8A1",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "主页",
+        "iconPath": "images/icon/index.png",
+        "selectedIconPath": "images/icon/index-select.png"
+      },
+      {
+        "pagePath": "pages/problem/problem",
+        "text": "问答",
+        "iconPath": "images/icon/question.png",
+        "selectedIconPath": "images/icon/question-select.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/icon/mine.png",
+        "selectedIconPath": "images/icon/mine-select.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

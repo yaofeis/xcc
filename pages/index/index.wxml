@@ -1,0 +1,97 @@
+<view class="box">
+  <!-- 顶部信息 -->
+  <view class="nav">
+    <view class="address">
+      <text>?</text>
+      <open-data type="userCity" lang="zh_CN"></open-data>
+    </view>
+    <view class="search">
+      <icon type="search" size="15" color="#28B8A1"></icon>
+      <text>请输入校园全称</text>
+    </view>
+    <view class="introduce">
+      <view>选校有问题，就上校查查</view>
+      <view>已完全覆盖成都幼儿园，共整理学校报告4273份</view>
+    </view>
+  </view>
+  <!-- 轮播 -->
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="2000" duration="500">
+    <block wx:for="{{background}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <!-- 校园报告 -->
+  <view class="school">
+    <view class="title">
+      <text>校园报告</text>
+      <view class="more">
+        <text>(点击更多根据位置远近排列)</text>
+        <text>更多></text>
+      </view>
+    </view>
+    <view class="content">
+      <block wx:for="{{background}}" key="*this">
+        <navigator url="/pages/schoolDetail/schoolDetail" class="list">
+          <view>
+            <view>这是一个标题标题啊标题，你怎么这么长啊，长点好看。</view>
+            <view>报告包括：食堂水平，教学质量，教师颜值，美女多少</view>
+          </view>
+          <view>
+            <image src="../../images/1.jpg"></image>
+            <text>热门</text>
+          </view>
+        </navigator>
+      </block>
+    </view>
+  </view>
+  <!-- 最新事项 -->
+  <view class="newThing">
+    <view class="title">
+      <text>最新事项</text>
+      <view class="more">
+        <text>(点击更多根据时间排列)</text>
+        <text>更多></text>
+      </view>
+    </view>
+    <view class="content">
+      <block wx:for="{{background}}" key="*this">
+        <view class="list">
+          <view>
+            <view>这是一个标题标题啊标题，你怎么这么长啊，长点好看。</view>
+            <view>报告包括：食堂水平，教学质量，教师颜值，美女多少</view>
+          </view>
+          <view>
+            <image src="../../images/1.jpg"></image>
+            <text>热门</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <!-- 问答热榜 -->
+  <view class="problem">
+    <view class="title">
+      <text>问答热榜</text>
+      <view class="more">
+        <text>(点击更多根据时间排列)</text>
+        <text>更多></text>
+      </view>
+    </view>
+    <view class="content">
+      <block wx:for="{{background}}" key="*this">
+        <view class="list">
+          <view>
+            <view>这是一个标题标题啊标题，你怎么这么长啊，长点好看。</view>
+            <view>报告包括：食堂水平，教学质量，教师颜值，美女多少</view>
+          </view>
+          <view>
+            <image src="../../images/1.jpg"></image>
+            <text>热门</text>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

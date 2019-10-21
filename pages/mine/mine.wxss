@@ -1,0 +1,43 @@
+page {
+  background: #f4f4f4;
+}
+
+.box {
+  font-size: 30rpx;
+}
+
+.userinfo {
+  background: white;
+  display: flex;
+  align-items: center;
+  padding: 40rpx;
+}
+
+.userImg {
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 50%;
+  margin-right: 40rpx;
+}
+
+.userName {
+  font-size: 34rpx;
+}
+
+.list {
+  margin-top: 20rpx;
+  background: white;
+  padding: 0 40rpx;
+}
+
+.list>navigator {
+  padding: 25rpx 0;
+}
+
+.list>navigator:not(:nth-last-child(1)) {
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.list>navigator>text:nth-of-type(2) {
+  padding-left: 40rpx;
+}

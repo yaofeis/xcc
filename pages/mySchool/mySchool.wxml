@@ -1,0 +1,22 @@
+<view class="box">
+    <view class="listBox">
+        <block wx:for="{{[1,2,3,4]}}" wx:key="*this">
+            <navigator url="/pages/schoolDetail/schoolDetail" class="list">
+                <view>
+                    <image src="../../images/1.jpg"></image>
+                    <view>
+                        <view class="title">成都天府第二幼儿园</view>
+                        <view class="type">
+                            <view>?75</view>
+                            <view>幼儿园</view>
+                        </view>
+                    </view>
+                </view>
+                <view>
+                    <text>成都市剑南大道444号</text>
+                    <text>3.5km</text>
+                </view>
+            </navigator>
+        </block>
+    </view>
+</view>

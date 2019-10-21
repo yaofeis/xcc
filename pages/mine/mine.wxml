@@ -1,0 +1,19 @@
+<view class="box">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取头像昵称</button>
+    <block wx:else>
+      <image class="userImg" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userName">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="list">
+    <navigator url="/pages/myQuestion/myQuestion">
+      <text>?</text>
+      <text>我的问答</text>
+    </navigator>
+    <navigator url="/pages/mySchool/mySchool">
+      <text>?</text>
+      <text>我的校园</text>
+    </navigator>
+  </view>
+</view>

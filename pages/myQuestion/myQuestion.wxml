@@ -1,0 +1,14 @@
+<view class="box">
+  <view class="listBox">
+    <block wx:for="{{[1,2,3,4]}}" wx:key="*this">
+      <view class="list">
+        <view class="title">孩子的认知升级方面，有什么好书推荐？</view>
+        <view class="content">1、反正就是一些文字，一定要多，是什么不重要，多就行了，而且还要沾满三行才能有效果，不然啥子东西都不晓得，现在估计快要三行了...</view>
+        <view class="info">
+          <view>?477</view>
+          <view>?130230</view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

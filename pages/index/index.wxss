@@ -1,0 +1,148 @@
+/**index.wxss**/
+
+.box {
+  background: #f4f4f4;
+}
+
+.nav {
+  background: #28b8a1;
+  height: 250rpx;
+  position: relative;
+  margin-bottom: 100rpx;
+}
+
+.address {
+  color: white;
+  padding: 20rpx;
+}
+
+.address >text {
+  padding-right: 20rpx;
+}
+
+.search {
+  margin: 0 60rpx;
+  background: #ebebeb;
+  border-radius: 50rpx;
+  padding: 15rpx 30rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search>text {
+  margin: auto;
+  font-size: 12px;
+  color: #bebebe;
+}
+
+.introduce {
+  width: 92%;
+  position: absolute;
+  border: 2px solid #28b8a1;
+  border-radius: 20rpx;
+  background: white;
+  top: 170rpx;
+  left: 4%;
+  padding: 20rpx;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.introduce>view:nth-of-type(1) {
+  font-weight: 700;
+  font-size: 34rpx;
+}
+
+.introduce>view:nth-of-type(2) {
+  font-size: 30rpx;
+  color: #5e5e5e;
+  padding-top: 20rpx;
+}
+
+.school {
+  margin: 40rpx 0;
+  background: white;
+  padding: 30rpx;
+}
+
+.newThing {
+  margin-bottom: 40rpx;
+  background: white;
+  padding: 30rpx;
+}
+
+.problem {
+  background: white;
+  padding: 30rpx;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title>text {
+  font-weight: 700;
+  font-size: 34rpx;
+}
+
+.more {
+  font-size: 30rpx;
+  color: #101010;
+}
+
+.more>text:nth-of-type(2) {
+  color: #8c8c8c;
+  padding-left: 10rpx;
+}
+
+.content>view:nth-of-type(1) {
+  border-bottom: 1px solid #ccc;
+}
+
+.list {
+  display: flex;
+  padding: 20rpx 0;
+}
+
+.list>view:nth-of-type(1) {
+  width: 65%;
+  padding-right: 10rpx;
+}
+
+.list>view:nth-of-type(2) {
+  width: 35%;
+  position: relative;
+}
+
+.list>view:nth-of-type(1)>view:nth-of-type(1) {
+  font-size: 30rpx;
+  color: #101010;
+}
+
+.list>view:nth-of-type(1)>view:nth-of-type(2) {
+  font-size: 28rpx;
+  color: #bebebe;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+
+.list>view:nth-of-type(2)>image {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+
+.list>view:nth-of-type(2)>text {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: white;
+  background: #ff2458;
+  font-size: 30rpx;
+  padding: 5rpx 10rpx;
+  border-radius: 10rpx;
+}

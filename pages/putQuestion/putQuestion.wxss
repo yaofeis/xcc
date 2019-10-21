@@ -1,0 +1,43 @@
+.box {
+  padding: 20rpx;
+  font-size: 30rpx;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav > text:nth-of-type(2) {
+  color: #28b8a1;
+}
+
+.title {
+  margin: 30rpx 0;
+  padding: 10rpx 0;
+}
+
+.tips {
+  background: #f9f9f9;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  color: #333;
+}
+
+.tips>view:nth-of-type(2) {
+  padding: 15rpx 0;
+}
+
+.tips>view:nth-of-type(2), .tips>view:nth-of-type(3) {
+  color: rgb(100, 100, 100);
+  padding-left: 80rpx;
+  font-size: 28rpx;
+}
+
+.remark{
+  padding: 10rpx;
+  margin-top: 30rpx;
+  width: calc(100% - 20rpx);
+  height: 200rpx;
+}

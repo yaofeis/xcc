@@ -1,0 +1,228 @@
+<view class="outBox">
+  <view>
+
+    <!--头部基本信息-->
+    <view class="info">
+      <view>
+        <image src="../../images/1.jpg"></image>
+        <view>
+          <view>成都贝尔幼儿园</view>
+          <view>占地面积：5900平方米</view>
+          <view>位置：成都高新区天府二街88号</view>
+          <view>？已开通教师沟通通道</view>
+        </view>
+        <view>
+          <view>关注</view>
+          <view>预约沟通</view>
+        </view>
+      </view>
+      <view class="updateTime">报告更新时间：2019/10/16</view>
+    </view>
+
+    <!--图片以及学费等信息的展示-->
+    <view class="imageShow">
+      <view>
+        <view>
+          <view>11
+            <text class="gray">年</text>
+          </view>
+          <view class="gray">建园年限</view>
+        </view>
+        <view>
+          <view>1:7</view>
+          <view class="gray">师生比例</view>
+        </view>
+        <view>
+          <view>7k</view>
+          <view class="gray">学费/学期</view>
+        </view>
+      </view>
+      <view>？资料通过平台官方认证</view>
+      <view>
+        <view>
+          <image src="../../images/1.jpg"></image>
+          <view>76</view>
+        </view>
+        <view>图片包括：寝室、厨房、活动区域、教室等...</view>
+      </view>
+    </view>
+
+    <!--周边环境-->
+    <view class="list">
+      <view class="title">周边环境</view>
+      <view class="listDetail">
+        <view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="shortcoming"></view>
+            <text>优点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+        </view>
+        <view>图片</view>
+      </view>
+    </view>
+
+    <!--校园环境-->
+    <view class="list">
+      <view class="title">校园环境</view>
+      <view class="listDetail">
+        <view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="shortcoming"></view>
+            <text>优点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+        </view>
+        <view>图片</view>
+      </view>
+    </view>
+
+    <!-- 饮食情况  -->
+    <view class="list">
+      <view class="title">饮食情况</view>
+      <view class="listDetail">
+        <view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="shortcoming"></view>
+            <text>优点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+        </view>
+        <view>图片</view>
+      </view>
+    </view>
+
+    <!-- 校园设施  -->
+    <view class="list">
+      <view class="title">校园设施</view>
+      <view class="listDetail">
+        <view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="shortcoming"></view>
+            <text>优点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+          <view>
+            <view class="advantage"></view>
+            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
+          </view>
+        </view>
+        <view>图片</view>
+      </view>
+    </view>
+
+    <!-- 师资情况 -->
+    <view class="list">
+      <view class="title">师资情况</view>
+      <view class="content">
+        现在有教师好多好多人哦，我也不晓得好多人，反正就是凑人数，不对，应该是凑字数，慢慢来，有几行展示就行了，我估计差不多了，就这样。
+      </view>
+    </view>
+
+    <!-- 课程安排 -->
+    <view class="list">
+      <view class="title">课程安排</view>
+      <view class="course">
+        <view>
+          <text>托班课程表</text>
+          <view>查看</view>
+        </view>
+        <view>
+          <text>小班课程表</text>
+          <view>查看</view>
+        </view>
+        <view>
+          <text>中班课程表</text>
+          <view>查看</view>
+        </view>
+        <view>
+          <text>大班课程表</text>
+          <view>查看</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 课程亮点 -->
+    <view class="list">
+      <view class="title">课程亮点</view>
+      <view class="content">
+        现在有教师好多好多人哦，我也不晓得好多人，反正就是凑人数，不对，应该是凑字数，慢慢来，有几行展示就行了，我估计差不多了，就这样。
+      </view>
+    </view>
+
+    <!-- 教育理念 -->
+    <view class="list">
+      <view class="title">教育理念</view>
+      <view class="content">
+        现在有教师好多好多人哦，我也不晓得好多人，反正就是凑人数，不对，应该是凑字数，慢慢来，有几行展示就行了，我估计差不多了，就这样。
+      </view>
+    </view>
+
+    <!-- 评论 -->
+    <view class="list">
+      <view class="title">评论</view>
+      <view class="comment">
+        <view>10月16日 21:53</view>
+        <view>
+          这是评论的内容，很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
+        </view>
+        <view>?89</view>
+      </view>
+      <view class="comment">
+        <view>10月16日 21:53</view>
+        <view>
+          这是评论的内容，很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
+        </view>
+        <view>?89</view>
+      </view>
+      <view class="comment">
+        <view>10月16日 21:53</view>
+        <view>
+          这是评论的内容，很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
+        </view>
+        <view>?89</view>
+      </view>
+    </view>
+  </view>
+  <view class="backBtn">返回</view>
+</view>

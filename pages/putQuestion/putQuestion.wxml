@@ -1,0 +1,13 @@
+<view class="box">
+  <view class="nav">
+    <text bindtap="back">取消</text>
+    <text>发布问题</text>
+  </view>
+  <input placeholder="输入问题标题" class="title"></input>
+  <view class="tips">
+    <view>tips：如何更好的获得更多解答</view>
+    <view>1、文字简练，将问题表述清楚。</view>
+    <view>2、提问前搜一搜，确定问题没有被提及。</view>
+  </view>
+  <textarea placeholder="请对问题进行补充说明，让其它家长更好的了解您的疑问(选填)" class="remark"></textarea>
+</view>
