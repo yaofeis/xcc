@@ -15,10 +15,10 @@
     </view>
   </view>
   <!-- 轮播 -->
-  <swiper indicator-dots="{{indicatorDots}}" autoplay="true" interval="2000" duration="500">
-    <block wx:for="{{background}}" wx:key="*this">
+  <swiper indicator-dots="true" autoplay="true" interval="2000" duration="500">
+    <block wx:for="{{background}}" wx:key="{{item.bannerId}}">
       <swiper-item>
-        <image src="{{item}}"></image>
+        <image src="{{item.bannerImage}}"></image>
       </swiper-item>
     </block>
   </swiper>
@@ -56,14 +56,13 @@
       </view>
     </view>
     <view class="content">
-      <block wx:for="{{background}}" key="*this">
+      <block wx:for="{{news}}" key="{{item.id}}">
         <view class="list">
           <view>
-            <view>这是一个标题标题啊标题，你怎么这么长啊，长点好看。</view>
-            <view>报告包括：食堂水平，教学质量，教师颜值，美女多少</view>
+            <view>{{item.showContent}}</view>
           </view>
           <view>
-            <image src="../../images/1.jpg"></image>
+            <image src="{{item.showImage}}"></image>
             <text>热门</text>
           </view>
         </view>
