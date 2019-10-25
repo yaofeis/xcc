@@ -1,0 +1,73 @@
+page{
+    background: #f4f4f4;
+    font-size: 30rpx;
+    color: #333;
+}
+
+.info{
+    padding: 20rpx;
+    background: white;
+}
+
+.info .title{
+    font-size: 34rpx;
+    font-weight: 700;
+    text-align: center;
+}
+
+.info .content{
+    text-indent: 2em;
+    text-align: justify;
+    padding-top: 20rpx;
+    padding-bottom: 40rpx;
+}
+
+.info .btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.info .btn>navigator{
+    border: 1px solid #28b8a1;
+    color: #28b8a1;
+    border-radius: 30rpx;
+    padding: 5rpx 20rpx;
+}
+
+.info .btn>view{
+    border: 1px solid #e1e1e1;
+    background: #e1e1e1;
+    border-radius: 30rpx;
+    padding: 5rpx 20rpx;
+}
+
+.comment .title{
+    font-weight: 500;
+    padding: 10rpx 20rpx;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: white;
+}
+
+.comment>view:nth-of-type(2)>view{
+    margin-bottom: 20rpx;
+    background: white;
+    padding: 20rpx;
+}
+
+.comment .name,
+.comment .time{
+    color: #ccc;
+    font-size: 26rpx;
+}
+
+.comment .content{
+    text-indent: 2em;
+    text-align: justify;
+    padding: 20rpx 0;
+}
+
+.comment .btn{
+    text-align: right;
+}

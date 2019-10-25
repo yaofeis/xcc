@@ -71,20 +71,19 @@
     <view class="title">
       <text>问答热榜</text>
       <view class="more">
-        <text>更多></text>
+        <navigator open-type="switchTab" url="/pages/problem/problem">更多></navigator>
       </view>
     </view>
     <view class="content">
-      <block wx:for="{{background}}" key="*this">
-        <view class="list">
+      <block wx:for="{{question}}" wx:key="{{item.questionId}}">
+        <navigator url="/pages/questionDetail/questionDetail?id={{item.questionId}}" class="problem-list">
+          <view>{{item.questionTitle}}</view>
+          <view>{{item.questionDescrib}}</view>
           <view>
-            <view>这是一个标题标题啊标题，你怎么这么长啊，长点好看。</view>
-            <view>报告包括：食堂水平，教学质量，教师颜值，美女多少</view>
+            <view>?477</view>
+            <view>?130230</view>
           </view>
-          <view>
-            <image src="../../images/1.jpg"></image>
-          </view>
-        </view>
+        </navigator>
       </block>
     </view>
   </view>

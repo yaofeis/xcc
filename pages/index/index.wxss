@@ -93,8 +93,8 @@
   color: #8c8c8c;
 }
 
-.content>view:nth-of-type(1) {
-  border-bottom: 1px solid #ccc;
+.content>navigator:not(:nth-of-type(1)) {
+  border-top: 1px solid #ccc;
 }
 
 .list {
@@ -141,4 +141,36 @@
   font-size: 30rpx;
   padding: 5rpx 10rpx;
   border-radius: 10rpx;
+}
+
+.problem-list{
+  background: white;
+  margin-bottom: 20rpx;
+  padding: 20rpx 0;
+  height: 250rpx;
+}
+
+.problem-list>view:nth-of-type(1){
+  font-weight: 700;
+  font-size: 34rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.problem-list>view:nth-of-type(2){
+  font-size: 30rpx;
+  line-height: 1.5;
+  color: #4b4b4b;
+  padding: 20rpx 0;
+  height: 130rpx;
+}
+
+.problem-list>view:nth-of-type(3){
+  display: flex;
+}
+
+.problem-list>view:nth-of-type(3)>view:nth-of-type(1){
+  padding-right: 80rpx;
+  color: rgb(37, 37, 37);
 }

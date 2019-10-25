@@ -1,0 +1,27 @@
+<view>
+    <view class="info">
+        <view class="title">{{question.questionTitle}}</view>
+        <view class="content">{{question.questionDescrib}}</view>
+        <view class="btn">
+            <navigator>?写回答</navigator>
+            <view>关注</view>
+        </view>
+    </view>
+    <view class="comment">
+        <view class="title">回答</view>
+        <view>
+            <view>
+                <view class="name">匿名用户</view>
+                <view class="time">2019年9月9日 9:00</view>
+                <view class="content">内容</view>
+                <view class="btn">?12</view>
+            </view>
+            <view>
+                <view class="name">匿名用户</view>
+                <view class="time">2019年9月9日 9:00</view>
+                <view class="content">内容</view>
+                <view class="btn">?12</view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -2,7 +2,8 @@ const {http, api, tips} = require('../../utils/util.js');
 Page({
     data: {
         background: [],
-        news: []
+        news: [],
+        question: []
     },
     onLoad: function () {
         let _this = this;
@@ -35,6 +36,23 @@ Page({
                 if (res.code === "0") {
                     _this.setData({
                         news: res.result
+                    });
+                } else {
+                    tips(res.message);
+                }
+            }
+        });
+        // 获取问答列表
+        http({
+            url: api.getQuestionList,
+            data: {
+                pageNum: 1,
+                pageSize: 2
+            },
+            success(res) {
+                if (res.code === "0") {
+                    _this.setData({
+                        question: res.result
                     });
                 } else {
                     tips(res.message);

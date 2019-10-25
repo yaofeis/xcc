@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/newsList/newsList",
     "pages/index/index",
+    "pages/questionDetail/questionDetail",
+    "pages/newsList/newsList",
     "pages/showImg/showImg",
     "pages/appointment/appointment",
     "pages/schoolDetail/schoolDetail",

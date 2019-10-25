@@ -28,8 +28,11 @@ const tips = (message, type = "none", time = 2000) => {
 const url = "https://www.sqyj.tech/schoolhome-server/";
 const api = {
     getBannerList: url + "banner/getBannerList.do?",// 获取轮播图
-    getNewsList: url + "news/getNewsList.do?",// 获取新闻
+    getNewsList: url + "news/getNewsList.do?",// 获取新闻列表
     getNewsDetail: url + "news/getNewsById.do?",// 获取新闻详情
+    getQuestionList: url + "question/getQuestionList.do?",// 获取问题列表
+    getQuestionDetail: url + "question/getQuestionById.do?",// 获取问题详情
+    getAnswerList: url + "answer/getAnswerList.do?",// 获取评论列表
 };
 
 module.exports = {
