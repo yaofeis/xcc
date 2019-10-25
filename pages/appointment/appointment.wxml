@@ -1,0 +1,73 @@
+<view class="outBox">
+  <view>
+
+    <!--头部基本信息-->
+    <view class="info">
+      <view>
+        <image src="../../images/1.jpg"></image>
+        <view>
+          <view>成都贝尔幼儿园</view>
+          <view>占地面积：5900平方米</view>
+          <view>位置：成都高新区天府二街88号</view>
+          <view>？已开通教师沟通通道</view>
+        </view>
+      </view>
+    </view>
+
+    <!--表单内容-->
+    <view class="form">
+      <view class="name">
+        <text>姓名:</text>
+        <input type="text" placeholder="请输入联系人姓名" maxlength="10" />
+      </view>
+      <view class="phone">
+        <text>手机号:</text>
+        <input type="number" placeholder="请输入联系人手机号" maxlength="11" />
+      </view>
+      <view class="grade">
+        <text>年级:</text>
+        <picker bindchange="gradeChange" value="{{selectGrade}}" range="{{grade}}">
+          <view class="picker">
+            {{grade[selectGrade]}}
+          </view>
+        </picker>
+      </view>
+      <view class="sex">
+        <text></text>
+        <view>
+          <radio-group class="sex-group" bindchange="sexChange">
+            <label wx:for-items="{{sex}}" wx:key="name">
+              <radio color="#28b8a1" value="{{item.name}}" checked="{{item.checked}}" />
+              <text>{{item.value}}</text>
+            </label>
+          </radio-group>
+        </view>
+      </view>
+      <view class="time">
+        <text>可选择时间段(每周):</text>
+        <radio-group class="time-group" bindchange="timeChange">
+          <label wx:for-items="{{time}}" wx:key="name">
+            <radio color="#28b8a1" value="{{item.name}}" checked="{{item.checked}}" />
+            <block wx:if="{{selectTime == item.name}}">
+              <view class="select">{{item.value}}</view>
+            </block>
+            <block wx:else>
+              <view>{{item.value}}</view>
+            </block>
+          </label>
+        </radio-group>
+      </view>
+      <view class="time-length">
+        <text>时长:</text>
+        <picker bindchange="timeLengthChange" value="{{selectTimeLength}}" range="{{timeLength}}">
+          <view class="picker">
+            {{timeLength[selectTimeLength]}}
+          </view>
+        </picker>
+      </view>
+      <view class="tips">学校老师会在您选择的时间段内像您来电，请保持电话通畅~</view>
+    </view>
+
+  </view>
+  <view>提交</view>
+</view>

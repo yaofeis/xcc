@@ -1,0 +1,150 @@
+.outBox {
+  background: white;
+  font-size: 30rpx;
+  color: #333;
+}
+
+.outBox>view:nth-of-type(1) {
+  padding-bottom: 100rpx;
+}
+
+.outBox>view:nth-of-type(2) {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90rpx;
+  background: #28b8a1;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.info {
+  background: #28b8a1;
+  padding: 20rpx;
+}
+
+.info>view {
+  display: flex;
+  align-items: center;
+}
+
+.info>view>image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  align-self: flex-start;
+}
+
+.info>view>view:nth-of-type(1) {
+  padding-left: 20rpx;
+  color: white;
+  width: calc(100% - 220rpx);
+}
+
+.info>view>view:nth-of-type(2) {
+  width: 120rpx;
+  font-size: 24rpx;
+}
+
+.info>view>view:nth-of-type(1)>view:nth-of-type(1) {
+  padding-bottom: 20rpx;
+}
+
+.info>view>view:nth-of-type(1)>view:not(:nth-of-type(1)) {
+  font-size: 24rpx;
+}
+
+.info>view>view:nth-of-type(1)>view:last-child {
+  color: #3ffceb;
+}
+
+.form {
+  padding: 20rpx;
+}
+
+.name, .phone, .grade, .sex, .time-length {
+  display: flex;
+  align-items: center;
+  padding: 20rpx 0;
+}
+
+.name>text, .phone>text, .grade>text, .sex>text, .time-length>text {
+  width: 120rpx;
+  text-align: right;
+  padding-right: 20rpx;
+}
+
+.name>input, .phone>input {
+  padding: 5rpx;
+  width: calc(100% - 120rpx);
+}
+
+.grade>picker, .time-length>picker {
+  width: calc(100% - 120rpx);
+}
+
+.sex-group>label>text {
+  padding-right: 40rpx;
+}
+
+.sex-group .wx-radio-input {
+  height: 30rpx;
+  width: 30rpx;
+  margin-top: -4rpx;
+  border-radius: 50%;
+  border: 1px solid #999;
+  background: transparent;
+}
+
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+
+.sex-group .wx-radio-input.wx-radio-input-checked {
+  border: 1px solid #999;
+  background: #28b8a1;
+}
+
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+
+.sex-group .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%; /* 圆角 */
+  width: 30rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 30rpx; /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 35rpx;
+  text-align: center;
+  font-size: 24rpx; /* 对勾大小 30rpx */
+  color: #fff; /* 对勾颜色 白色 */
+  background: #28b8a1;
+}
+
+.time {
+  padding: 20rpx 0 20rpx 47rpx;
+}
+
+.time>text {
+  padding: 20rpx 0;
+}
+
+.time-group radio {
+  display: none;
+}
+
+.time-group>label>view {
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10rpx;
+  padding: 5rpx 20rpx;
+  margin: 20rpx 20rpx 0 0;
+}
+
+.time-group>label>view.select {
+  border: 1px solid #28b8a1;
+}
+
+.tips {
+  padding: 20rpx 0 20rpx 47rpx;
+  font-size: 26rpx;
+  color: #ccc;
+}

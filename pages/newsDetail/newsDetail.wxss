@@ -1,0 +1,17 @@
+page{
+    background: rgb(244, 244, 244);
+}
+
+.box{
+    padding: 20rpx;
+    font-size: 30rpx;
+    color: #333;
+    text-align: justify;
+}
+
+.title{
+    font-size: 36rpx;
+    padding-bottom: 20rpx;
+    font-weight: 700;
+    text-align: center;
+}

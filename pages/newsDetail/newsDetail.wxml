@@ -1,0 +1,4 @@
+<view class="box">
+    <view class="title">{{news.newsTitle}}</view>
+    <rich-text nodes="{{news.newsContent}}"></rich-text>
+</view>

@@ -1,13 +1,17 @@
 {
   "pages": [
+    "pages/newsList/newsList",
     "pages/index/index",
+    "pages/showImg/showImg",
+    "pages/appointment/appointment",
     "pages/schoolDetail/schoolDetail",
     "pages/mySchool/mySchool",
     "pages/myQuestion/myQuestion",
     "pages/mine/mine",
     "pages/putQuestion/putQuestion",
     "pages/problem/problem",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/newsDetail/newsDetail"
   ],
   "window": {
     "backgroundTextStyle": "light",

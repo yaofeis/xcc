@@ -46,6 +46,7 @@
   padding: 20rpx;
   box-sizing: border-box;
   text-align: center;
+  box-shadow: 0 0 5px 1px #218769;
 }
 
 .introduce>view:nth-of-type(1) {
@@ -89,12 +90,7 @@
 
 .more {
   font-size: 30rpx;
-  color: #101010;
-}
-
-.more>text:nth-of-type(2) {
   color: #8c8c8c;
-  padding-left: 10rpx;
 }
 
 .content>view:nth-of-type(1) {

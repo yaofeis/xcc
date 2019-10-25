@@ -10,7 +10,7 @@
       <text>请输入校园全称</text>
     </view>
     <view class="introduce">
-      <view>选校有问题，就上校查查</view>
+      <view>选校有问题，就上幼儿PAI</view>
       <view>已完全覆盖成都幼儿园，共整理学校报告4273份</view>
     </view>
   </view>
@@ -27,7 +27,6 @@
     <view class="title">
       <text>校园报告</text>
       <view class="more">
-        <text>(点击更多根据位置远近排列)</text>
         <text>更多></text>
       </view>
     </view>
@@ -51,21 +50,19 @@
     <view class="title">
       <text>最新事项</text>
       <view class="more">
-        <text>(点击更多根据时间排列)</text>
-        <text>更多></text>
+        <navigator url="/pages/newsList/newsList">更多></navigator>
       </view>
     </view>
     <view class="content">
-      <block wx:for="{{news}}" key="{{item.id}}">
-        <view class="list">
+      <block wx:for="{{news}}" wx:key="{{item.newsId}}">
+        <navigator url="/pages/newsDetail/newsDetail?id={{item.newsId}}" class="list">
           <view>
             <view>{{item.showContent}}</view>
           </view>
           <view>
             <image src="{{item.showImage}}"></image>
-            <text>热门</text>
           </view>
-        </view>
+        </navigator>
       </block>
     </view>
   </view>
@@ -74,7 +71,6 @@
     <view class="title">
       <text>问答热榜</text>
       <view class="more">
-        <text>(点击更多根据时间排列)</text>
         <text>更多></text>
       </view>
     </view>
@@ -87,7 +83,6 @@
           </view>
           <view>
             <image src="../../images/1.jpg"></image>
-            <text>热门</text>
           </view>
         </view>
       </block>

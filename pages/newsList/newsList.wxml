@@ -1,0 +1,13 @@
+<view class="content">
+    <block wx:for="{{news}}" wx:key="{{item.newsId}}">
+        <navigator url="/pages/newsDetail/newsDetail?id={{item.newsId}}" class="list">
+            <view>
+                <view>{{item.showContent}}</view>
+            </view>
+            <view>
+                <image src="{{item.showImage}}"></image>
+            </view>
+        </navigator>
+    </block>
+    <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
+</view>

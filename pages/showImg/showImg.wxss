@@ -1,0 +1,36 @@
+.box {
+  color: #333;
+  font-size: 30rpx;
+}
+
+.nav {
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.nav>scroll-view {
+  width: 100%;
+  height: 50rpx;
+  white-space: nowrap;
+}
+
+.nav>scroll-view text {
+  padding: 10rpx 25rpx;
+}
+
+.nav>scroll-view text.active {
+  color: #28b8a1;
+}
+
+.img {
+  display: flex;
+  padding: 20rpx;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.img>image {
+  width: 345rpx;
+  height: 345rpx;
+  border-radius: 10rpx;
+  margin-bottom: 20rpx;
+}

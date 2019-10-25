@@ -13,7 +13,7 @@
         </view>
         <view>
           <view>关注</view>
-          <view>预约沟通</view>
+          <navigator url="/pages/appointment/appointment">预约沟通</navigator>
         </view>
       </view>
       <view class="updateTime">报告更新时间：2019/10/16</view>
@@ -39,10 +39,10 @@
       </view>
       <view>？资料通过平台官方认证</view>
       <view>
-        <view>
+        <navigator url="/pages/showImg/showImg" class="imgBox">
           <image src="../../images/1.jpg"></image>
           <view>76</view>
-        </view>
+        </navigator>
         <view>图片包括：寝室、厨房、活动区域、教室等...</view>
       </view>
     </view>
@@ -69,7 +69,7 @@
             <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
           </view>
         </view>
-        <view>图片</view>
+        <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
     </view>
 
@@ -95,7 +95,7 @@
             <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
           </view>
         </view>
-        <view>图片</view>
+        <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
     </view>
 
@@ -121,7 +121,7 @@
             <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
           </view>
         </view>
-        <view>图片</view>
+        <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
     </view>
 
@@ -147,7 +147,7 @@
             <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
           </view>
         </view>
-        <view>图片</view>
+        <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
     </view>
 
@@ -224,5 +224,5 @@
       </view>
     </view>
   </view>
-  <view class="backBtn">返回</view>
+  <view>返回</view>
 </view>

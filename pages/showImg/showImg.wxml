@@ -1,0 +1,29 @@
+<view class="box">
+    <view class="nav">
+        <scroll-view scroll-x="true" enable-flex="true">
+            <text class="active">全部图片</text>
+            <text>寝室</text>
+            <text>厨房</text>
+            <text>校园环境</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+            <text>教室</text>
+        </scroll-view>
+    </view>
+
+    <view class="img">
+        <image src="../../images/1.jpg"></image>
+        <image src="../../images/1.jpg"></image>
+        <image src="../../images/1.jpg"></image>
+        <image src="../../images/1.jpg"></image>
+        <image src="../../images/1.jpg"></image>
+        <image src="../../images/1.jpg"></image>
+    </view>
+</view>

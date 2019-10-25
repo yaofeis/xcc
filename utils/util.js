@@ -29,6 +29,7 @@ const url = "https://www.sqyj.tech/schoolhome-server/";
 const api = {
     getBannerList: url + "banner/getBannerList.do?",// 获取轮播图
     getNewsList: url + "news/getNewsList.do?",// 获取新闻
+    getNewsDetail: url + "news/getNewsById.do?",// 获取新闻详情
 };
 
 module.exports = {
