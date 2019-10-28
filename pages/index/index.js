@@ -7,6 +7,33 @@ Page({
     },
     onLoad: function () {
         let _this = this;
+        // 获取用户信息
+        wx.getSetting({
+            success: res => {
+                if (res.authSetting['scope.userInfo']) {
+                    wx.getUserInfo({
+                        success: res => {
+                            let nickname = res.userInfo.nickName;
+                            http({
+                                url: api.modifyUser,
+                                data: {
+                                    userId: wx.getStorageSync('userId'),
+                                    nickName: nickname
+                                },
+                                success(res) {
+                                    if (res.code === "0") {
+                                        wx.setStorageSync('nickName', nickname);
+                                    } else {
+                                        tips(res.message);
+                                    }
+                                }
+                            });
+                        }
+                    })
+                }
+            }
+        });
+
         // 获取轮播图
         http({
             url: api.getBannerList,

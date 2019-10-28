@@ -1,18 +1,34 @@
-// pages/myQuestion/myQuestion.js
+const {http, api, tips} = require('../../utils/util.js');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    question: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    http({
+      url: api.getMyQuestion,
+      data: {
+        pageNum: 1,
+        pageSize: 20,
+        userId: wx.getStorageSync('userId')
+      },
+      success(res) {
+        if (res.code === "0") {
+          this.setData({
+            question: res.content
+          })
+        } else {
+          tips(res.message);
+        }
+      }
+    });
   },
 
   /**

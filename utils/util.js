@@ -33,6 +33,10 @@ const api = {
     getQuestionList: url + "question/getQuestionList.do?",// 获取问题列表
     getQuestionDetail: url + "question/getQuestionById.do?",// 获取问题详情
     getAnswerList: url + "answer/getAnswerList.do?",// 获取评论列表
+    login: url + "user/therdPartLogin.do?",// 登录
+    modifyUser: url + "user/modifyUser.do?",// 修改用户信息
+    addQuestion: url + "question/addQuestion.do?",// 提问
+    getMyQuestion: url + "focusQuestion/getFocusQuestionList.do?",// 获取我的问题列表
 };
 
 module.exports = {
