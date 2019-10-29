@@ -31,14 +31,14 @@
             </view>
         </view>
         <view class="content">
-            <block wx:for="{{background}}" key="*this">
-                <navigator url="/pages/schoolDetail/schoolDetail" class="list">
+            <block wx:for="{{school}}" wx:key="{{item.schoolId}}">
+                <navigator url="/pages/schoolDetail/schoolDetail?id={{item.schoolId}}" class="list">
                     <view>
-                        <view>这是一个标题标题啊标题，你怎么这么长啊，长点好看。</view>
-                        <view>报告包括：食堂水平，教学质量，教师颜值，美女多少</view>
+                        <view>{{item.schoolName}}</view>
+                        <view>报告包括：师资水平、周边环境、校园环境、伙食情况等</view>
                     </view>
                     <view>
-                        <image src="../../images/1.jpg"></image>
+                        <image src="{{item.icon}}"></image>
                         <text>热门</text>
                     </view>
                 </navigator>

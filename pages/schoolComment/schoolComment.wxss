@@ -1,0 +1,28 @@
+.box {
+    padding: 20rpx;
+    font-size: 30rpx;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav > text:nth-of-type(2) {
+    color: #28b8a1;
+}
+
+.name {
+    text-align: center;
+    padding: 10rpx 0;
+    font-weight: bolder;
+    font-size: 34rpx;
+}
+
+.remark{
+    padding: 10rpx;
+    margin-top: 30rpx;
+    width: calc(100% - 20rpx);
+    height: 200rpx;
+}

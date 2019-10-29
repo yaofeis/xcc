@@ -1,0 +1,8 @@
+<view class="box">
+    <view class="nav">
+        <text bindtap="back">取消</text>
+        <text bindtap="submit">发布</text>
+    </view>
+    <view class="name">{{info.name}}</view>
+    <textarea placeholder="请填写回答内容" class="remark" value="{{remark}}" bindinput="inputChange"></textarea>
+</view>

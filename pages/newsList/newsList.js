@@ -24,7 +24,7 @@ Page({
         http({
             url: api.getNewsList,
             data: {
-                pageNum: this.data.pageNum,
+                pageNum: _this.data.pageNum,
                 pageSize: 10
             },
             success(res) {

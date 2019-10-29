@@ -37,6 +37,11 @@ const api = {
     modifyUser: url + "user/modifyUser.do?",// 修改用户信息
     addQuestion: url + "question/addQuestion.do?",// 提问
     getMyQuestion: url + "focusQuestion/getFocusQuestionList.do?",// 获取我的问题列表
+    getSchoolList: url + "school/getSchoolList.do?",// 获取学校列表
+    getSchoolDetail: url + "school/getSchoolDetailById.do?",// 获取学校信息详情
+    getSchoolCommentList: url + "schoolComment/getSchoolCommentList.do?",// 获取学校评论列表
+    addSchoolComment: url + "schoolComment/addSchoolComment.do?",// 添加学校评论
+    commentPraise: url + "schoolComment/commentPraise.do?",// 学校评论点赞、取消点赞
 };
 
 module.exports = {

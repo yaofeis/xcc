@@ -1,12 +1,12 @@
 <view class="box">
   <view class="listBox">
-    <block wx:for="question" wx:key="*this">
+    <block wx:for="{{question}}" wx:key="{{item.questionId}}">
       <view class="list">
         <view class="title">{{item.questionTitle}}</view>
         <view class="content">{{item.questionDescrib}}</view>
         <view class="info">
-          <view>?477</view>
-          <view>?130230</view>
+          <view>?{{item.visitCount}}</view>
+          <view>?{{item.countAnswer }}</view>
         </view>
       </view>
     </block>

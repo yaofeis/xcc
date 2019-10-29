@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let _this = this;
     http({
       url: api.getMyQuestion,
       data: {
@@ -21,8 +22,8 @@ Page({
       },
       success(res) {
         if (res.code === "0") {
-          this.setData({
-            question: res.content
+          _this.setData({
+            question: res.result
           })
         } else {
           tips(res.message);

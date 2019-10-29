@@ -4,36 +4,37 @@
     <!--头部基本信息-->
     <view class="info">
       <view>
-        <image src="../../images/1.jpg"></image>
+        <image src="{{info.icon}}"></image>
         <view>
-          <view>成都贝尔幼儿园</view>
-          <view>占地面积：5900平方米</view>
-          <view>位置：成都高新区天府二街88号</view>
-          <view>？已开通教师沟通通道</view>
+          <view>{{info.schoolName}}</view>
+          <view>占地面积：{{info.areaCovered}}平方米</view>
+          <view>位置：{{info.address}}</view>
+          <view wx:if="{{info.openSubscribe === 1}}">？已开通教师沟通通道</view>
+          <view wx:else>？未开通教师沟通通道</view>
         </view>
         <view>
           <view>关注</view>
-          <navigator url="/pages/appointment/appointment">预约沟通</navigator>
+          <navigator wx:if="{{info.openSubscribe === 1}}" url="/pages/appointment/appointment">预约沟通</navigator>
         </view>
       </view>
-      <view class="updateTime">报告更新时间：2019/10/16</view>
+      <view class="updateTime">报告更新时间：{{info.updatedDate}}</view>
     </view>
 
     <!--图片以及学费等信息的展示-->
     <view class="imageShow">
       <view>
         <view>
-          <view>11
+          <view>{{info.buildYear}}
             <text class="gray">年</text>
           </view>
           <view class="gray">建园年限</view>
         </view>
         <view>
-          <view>1:7</view>
+          <view>{{info.studentRatio}}</view>
           <view class="gray">师生比例</view>
         </view>
         <view>
-          <view>7k</view>
+          <view>{{info.tuition}}</view>
           <view class="gray">学费/学期</view>
         </view>
       </view>
@@ -52,22 +53,13 @@
       <view class="title">周边环境</view>
       <view class="listDetail">
         <view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="shortcoming"></view>
-            <text>优点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
+          <block wx:for="{{info.surroundingEnvironment}}" wx:key="{{item.itemId}}">
+            <view>
+              <view wx:if="{{item.itemPraise === 1}}" class="advantage"></view>
+              <view wx:else class="shortcoming"></view>
+              <text>{{item.itemWhole}}</text>
+            </view>
+          </block>
         </view>
         <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
@@ -78,22 +70,13 @@
       <view class="title">校园环境</view>
       <view class="listDetail">
         <view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="shortcoming"></view>
-            <text>优点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
+          <block wx:for="{{info.campusEnvironment}}" wx:key="{{item.itemId}}">
+            <view>
+              <view wx:if="{{item.itemPraise === 1}}" class="advantage"></view>
+              <view wx:else class="shortcoming"></view>
+              <text>{{item.itemWhole}}</text>
+            </view>
+          </block>
         </view>
         <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
@@ -104,22 +87,13 @@
       <view class="title">饮食情况</view>
       <view class="listDetail">
         <view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="shortcoming"></view>
-            <text>优点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
+          <block wx:for="{{info.mealsSituation}}" wx:key="{{item.itemId}}">
+            <view>
+              <view wx:if="{{item.itemPraise === 1}}" class="advantage"></view>
+              <view wx:else class="shortcoming"></view>
+              <text>{{item.itemWhole}}</text>
+            </view>
+          </block>
         </view>
         <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
@@ -128,24 +102,9 @@
     <!-- 校园设施  -->
     <view class="list">
       <view class="title">校园设施</view>
-      <view class="listDetail">
+      <view class="school-content">
         <view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="shortcoming"></view>
-            <text>优点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
-          <view>
-            <view class="advantage"></view>
-            <text>优点点点点点点点点点点点点点点点点点点点点点点点点</text>
-          </view>
+          {{info.campusFacilities[0].itemWhole}}
         </view>
         <navigator url="/pages/showImg/showImg">图片</navigator>
       </view>
@@ -155,7 +114,7 @@
     <view class="list">
       <view class="title">师资情况</view>
       <view class="content">
-        现在有教师好多好多人哦，我也不晓得好多人，反正就是凑人数，不对，应该是凑字数，慢慢来，有几行展示就行了，我估计差不多了，就这样。
+        {{info.ourFaculty}}
       </view>
     </view>
 
@@ -186,7 +145,7 @@
     <view class="list">
       <view class="title">课程亮点</view>
       <view class="content">
-        现在有教师好多好多人哦，我也不晓得好多人，反正就是凑人数，不对，应该是凑字数，慢慢来，有几行展示就行了，我估计差不多了，就这样。
+        {{info.courseCharacteristics}}
       </view>
     </view>
 
@@ -194,34 +153,44 @@
     <view class="list">
       <view class="title">教育理念</view>
       <view class="content">
-        现在有教师好多好多人哦，我也不晓得好多人，反正就是凑人数，不对，应该是凑字数，慢慢来，有几行展示就行了，我估计差不多了，就这样。
+        {{info.educationalIdeas}}
+      </view>
+    </view>
+
+    <!-- 入学要求 -->
+    <view class="list">
+      <view class="title">入学要求</view>
+      <view class="content">
+        {{info.entryRequirements}}
       </view>
     </view>
 
     <!-- 评论 -->
     <view class="list">
-      <view class="title">评论</view>
-      <view class="comment">
-        <view>10月16日 21:53</view>
-        <view>
-          这是评论的内容，很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
-        </view>
-        <view>?89</view>
+      <view class="comment-nav">
+        <view>评论</view>
+        <navigator url="/pages/schoolComment/schoolComment?id={{info.schoolId}}&name={{info.schoolName}}">写评论</navigator>
       </view>
-      <view class="comment">
-        <view>10月16日 21:53</view>
-        <view>
-          这是评论的内容，很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
+      <block wx:if="{{comment.length > 0}}" wx:for="{{comment}}" wx:key="{{item.commentId}}">
+        <view class="comment">
+          <view>
+            <view>{{item.nickName}}</view>
+            <view>{{item.date}}</view>
+          </view>
+          <view>
+            {{item.commentContent}}
+          </view>
+          <view bindtap="praise" data-id="{{item.commentId}}">
+            <text wx:if="{{item.isPraise === 1}}">?</text>
+            <text wx:else>!</text>
+            {{item.countPraise}}
+          </view>
         </view>
-        <view>?89</view>
-      </view>
-      <view class="comment">
-        <view>10月16日 21:53</view>
-        <view>
-          这是评论的内容，很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多很多
-        </view>
-        <view>?89</view>
-      </view>
+      </block>
+      <block wx:if="{{comment.length === 0}}">
+        <view>暂无评论</view>
+      </block>
+      <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
     </view>
   </view>
   <view>返回</view>
