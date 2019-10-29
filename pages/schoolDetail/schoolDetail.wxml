@@ -14,10 +14,10 @@
         </view>
         <view>
           <view>关注</view>
-          <navigator wx:if="{{info.openSubscribe === 1}}" url="/pages/appointment/appointment">预约沟通</navigator>
+          <navigator wx:if="{{info.openSubscribe === 1}}" url="/pages/appointment/appointment?id={{info.schoolId}}">预约沟通</navigator>
         </view>
       </view>
-      <view class="updateTime">报告更新时间：{{info.updatedDate}}</view>
+      <view class="updateTime">报告更新时间：{{info.date}}</view>
     </view>
 
     <!--图片以及学费等信息的展示-->

@@ -1,3 +1,8 @@
+const {
+  http,
+  api,
+  tips
+} = require('../../utils/util.js');
 Page({
 
   /**
@@ -16,24 +21,14 @@ Page({
         name: '2'
       }
     ],
-    selectSex: "",
-    time: [{
-        value: '星期二15:00-16:00',
-        name: '1',
-        checked: 'true'
-      },
-      {
-        value: '星期三15:00-16:00',
-        name: '2'
-      },
-      {
-        value: '星期四15:00-16:00',
-        name: '3'
-      }
-    ],
-    selectTime: "1",
+    selectSex: "1",
+    time: [],
+    selectTime: "",
     timeLength: ['5分钟', '10分钟', '20分钟', '30分钟'],
     selectTimeLength: 0,
+    info: {},
+    name: "",
+    phone: ""
   },
   // 年级选择器
   gradeChange(e) {
@@ -59,11 +54,84 @@ Page({
       selectTimeLength: e.detail.value
     })
   },
+  // 输入框发生变化
+  inputChange(e) {
+    if (e.target.dataset.type === "phone") {
+      this.setData({
+        phone: e.detail.value
+      })
+    } else {
+      this.setData({
+        name: e.detail.value
+      })
+    }
+  },
+  // 提交
+  submit() {
+    let _this = this;
+    if (_this.data.name === "") return tips("请输入姓名");
+    if (_this.data.phone === "") return tips("请输入电话");
+    http({
+      url: api.addSubscribe,
+      data: {
+        userId: wx.getStorageSync('userId'),
+        schoolId: _this.data.info.schoolId,
+        userName: _this.data.name,
+        mobile: _this.data.phone,
+        childGrade: _this.data.grade[_this.data.selectGrade],
+        userGender: _this.data.selectSex,
+        subscribeDate: _this.data.selectTime,
+        week: _this.data.selectTime,
+        subscribeDuration: _this.data.timeLength[_this.data.selectTimeLength]
+      },
+      success(res) {
+        if (res.code === "0") {
+          tips("预约成功", "success");
+          setTimeout(() => {
+            wx.redirectTo({
+              url: '/pages/schoolDetail/schoolDetail?id=' + _this.data.info.id
+            });
+          }, 2000);
+        } else {
+          tips(res.message);
+        }
+      }
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // 获取学校基本信息
+    let _this = this;
+    http({
+      url: api.getSchoolDetail,
+      data: {
+        schoolId: options.id
+      },
+      success(res) {
+        if (res.code === "0") {
+          let subscribeTime = res.result.subscribeTime.split(",");
+          let time = [];
+          subscribeTime.map((item, index) => {
+            let obj = {};
+            if (index === 0) {
+              obj.checked = true;
+            }
+            obj.value = item;
+            obj.name = item;
+            time.push(obj);
+          });
+          _this.setData({
+            info: res.result,
+            time: time,
+            selectTime: time[0].value
+          });
+        } else {
+          tips(res.message);
+        }
+      }
+    });
   },
 
   /**

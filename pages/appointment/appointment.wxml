@@ -4,11 +4,11 @@
     <!--头部基本信息-->
     <view class="info">
       <view>
-        <image src="../../images/1.jpg"></image>
+        <image src="{{info.icon}}"></image>
         <view>
-          <view>成都贝尔幼儿园</view>
-          <view>占地面积：5900平方米</view>
-          <view>位置：成都高新区天府二街88号</view>
+          <view>{{info.schoolName}}</view>
+          <view>占地面积：{{info.areaCovered}}平方米</view>
+          <view>位置：{{info.address}}</view>
           <view>？已开通教师沟通通道</view>
         </view>
       </view>
@@ -18,11 +18,11 @@
     <view class="form">
       <view class="name">
         <text>姓名:</text>
-        <input type="text" placeholder="请输入联系人姓名" maxlength="10" />
+        <input type="text" placeholder="请输入联系人姓名" maxlength="10" value="{{name}}" bindinput="inputChange" data-type="name" />
       </view>
       <view class="phone">
         <text>手机号:</text>
-        <input type="number" placeholder="请输入联系人手机号" maxlength="11" />
+        <input type="number" placeholder="请输入联系人手机号" maxlength="11" value="{{phone}}" bindinput="inputChange" data-type="phone"/>
       </view>
       <view class="grade">
         <text>年级:</text>
@@ -69,5 +69,5 @@
     </view>
 
   </view>
-  <view>提交</view>
+  <view bindtap="submit">提交</view>
 </view>
