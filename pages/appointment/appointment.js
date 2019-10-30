@@ -82,14 +82,14 @@ Page({
         userGender: _this.data.selectSex,
         subscribeDate: _this.data.selectTime,
         week: _this.data.selectTime,
-        subscribeDuration: _this.data.timeLength[_this.data.selectTimeLength]
+        subscribeDuration: _this.data.timeLength[_this.data.selectTimeLength].split("分钟")[0]
       },
       success(res) {
         if (res.code === "0") {
           tips("预约成功", "success");
           setTimeout(() => {
             wx.redirectTo({
-              url: '/pages/schoolDetail/schoolDetail?id=' + _this.data.info.id
+              url: '/pages/schoolDetail/schoolDetail?id=' + _this.data.info.schoolId
             });
           }, 2000);
         } else {

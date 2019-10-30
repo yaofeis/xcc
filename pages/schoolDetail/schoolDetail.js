@@ -13,7 +13,14 @@ Page({
     comment: [],
     total: 0,
     pageNum: 1,
-    isBottom: false
+    isBottom: false,
+    imgInfo: {
+      src: "",
+      num: 0
+    },
+    previewUrl: "",
+    isPreview: false,
+    course: {}
   },
 
   // 获取学校相关信息
@@ -119,12 +126,70 @@ Page({
     });
   },
 
+  // 获取学校图片
+  getImage(id){
+    let _this = this;
+    http({
+      url: api.getSchoolImageList,
+      data: {
+        pageNum: 1,
+        pageSize: 1000,
+        schoolId: id
+      },
+      success(res) {
+        if (res.code === "0") {
+          let info = {
+            src: res.result[0].imageUrl,
+            num: res.total
+          };
+          let mini = res.result.find(item=>item.imageType === 7);
+          let small = res.result.find(item=>item.imageType === 8);
+          let middle = res.result.find(item=>item.imageType === 9);
+          let big = res.result.find(item=>item.imageType === 10);
+          _this.setData({
+            imgInfo: info,
+            course: {
+              mini,
+              small,
+              middle,
+              big
+            }
+          })
+        } else {
+          tips(res.message);
+        }
+      }
+    });
+  },
+
+  // 预览课程表图片
+  preview(e){
+    this.setData({
+      isPreview: true,
+      previewUrl: e.target.dataset.url
+    });
+  },
+
+  // 取消预览课程表图片
+  cancelPreview(){
+    this.setData({
+      isPreview: false,
+      previewUrl: ""
+    });
+  },
+
+  // 返回
+  back(){
+    wx.navigateBack();
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     this.getSchoolDetail(options.id);
     this.getComment(options.id, true);
+    this.getImage(options.id);
   },
 
   /**

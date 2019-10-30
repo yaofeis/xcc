@@ -1,29 +1,26 @@
 <view class="box">
     <view class="nav">
         <scroll-view scroll-x="true" enable-flex="true">
-            <text class="active">全部图片</text>
-            <text>寝室</text>
-            <text>厨房</text>
-            <text>校园环境</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
-            <text>教室</text>
+            <text data-type="all" bindtap="changeNav" class="{{type === 'all' ? 'active' : ''}}">全部图片</text>
+            <text data-type="1" bindtap="changeNav" class="{{type === '1' ? 'active' : ''}}">周边环境</text>
+            <text data-type="2" bindtap="changeNav" class="{{type === '2' ? 'active' : ''}}">校园环境</text>
+            <text data-type="3" bindtap="changeNav" class="{{type === '3' ? 'active' : ''}}">饮食情况</text>
+            <text data-type="6" bindtap="changeNav" class="{{type === '6' ? 'active' : ''}}">校园设施</text>
         </scroll-view>
     </view>
 
     <view class="img">
-        <image src="../../images/1.jpg"></image>
-        <image src="../../images/1.jpg"></image>
-        <image src="../../images/1.jpg"></image>
-        <image src="../../images/1.jpg"></image>
-        <image src="../../images/1.jpg"></image>
-        <image src="../../images/1.jpg"></image>
+        <block wx:if="{{imgList.length > 0}}">
+            <block wx:for="{{imgList}}" wx:key="{{item.imageId}}">
+                <image data-url="{{item.imageUrl}}" bindtap="preview" src="{{item.imageUrl}}"></image>
+            </block>
+        </block>
+        <block wx:else>
+            <view class="tips">暂无图片</view>
+        </block>
+    </view>
+
+    <view class="preview" wx:if="{{isPreview}}">
+        <image src="{{previewUrl}}" bindtap="cancelPreview"></image>
     </view>
 </view>

@@ -40,9 +40,9 @@
       </view>
       <view>？资料通过平台官方认证</view>
       <view>
-        <navigator url="/pages/showImg/showImg" class="imgBox">
-          <image src="../../images/1.jpg"></image>
-          <view>76</view>
+        <navigator url="/pages/showImg/showImg?id={{info.schoolId}}&type=all" class="imgBox">
+          <image src="{{imgInfo.src}}"></image>
+          <view>{{imgInfo.num}}</view>
         </navigator>
         <view>图片包括：寝室、厨房、活动区域、教室等...</view>
       </view>
@@ -61,7 +61,7 @@
             </view>
           </block>
         </view>
-        <navigator url="/pages/showImg/showImg">图片</navigator>
+        <navigator url="/pages/showImg/showImg?id={{info.schoolId}}&type=1">图片</navigator>
       </view>
     </view>
 
@@ -78,7 +78,7 @@
             </view>
           </block>
         </view>
-        <navigator url="/pages/showImg/showImg">图片</navigator>
+        <navigator url="/pages/showImg/showImg?id={{info.schoolId}}&type=2">图片</navigator>
       </view>
     </view>
 
@@ -95,7 +95,7 @@
             </view>
           </block>
         </view>
-        <navigator url="/pages/showImg/showImg">图片</navigator>
+        <navigator url="/pages/showImg/showImg?id={{info.schoolId}}&type=3">图片</navigator>
       </view>
     </view>
 
@@ -106,7 +106,7 @@
         <view>
           {{info.campusFacilities[0].itemWhole}}
         </view>
-        <navigator url="/pages/showImg/showImg">图片</navigator>
+        <navigator url="/pages/showImg/showImg?id={{info.schoolId}}&type=6">图片</navigator>
       </view>
     </view>
 
@@ -124,19 +124,19 @@
       <view class="course">
         <view>
           <text>托班课程表</text>
-          <view>查看</view>
+          <view data-url="{{course.mini.imageUrl}}" bindtap="preview">查看</view>
         </view>
         <view>
           <text>小班课程表</text>
-          <view>查看</view>
+          <view data-url="{{course.small.imageUrl}}" bindtap="preview">查看</view>
         </view>
         <view>
           <text>中班课程表</text>
-          <view>查看</view>
+          <view data-url="{{course.middle.imageUrl}}" bindtap="preview">查看</view>
         </view>
         <view>
           <text>大班课程表</text>
-          <view>查看</view>
+          <view data-url="{{course.big.imageUrl}}" bindtap="preview">查看</view>
         </view>
       </view>
     </view>
@@ -193,5 +193,9 @@
       <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
     </view>
   </view>
-  <view>返回</view>
+  <view bindtap="back">返回</view>
+
+  <view class="preview" wx:if="{{isPreview}}">
+    <image src="{{previewUrl}}" bindtap="cancelPreview"></image>
+  </view>
 </view>
