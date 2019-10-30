@@ -80,8 +80,8 @@
                     <view>{{item.questionTitle}}</view>
                     <view>{{item.questionDescrib}}</view>
                     <view>
-                        <view>?477</view>
-                        <view>?130230</view>
+                        <view>?{{item.visitCount || 0}}</view>
+                        <view>?{{item.countAnswer || 0}}</view>
                     </view>
                 </navigator>
             </block>

@@ -25,7 +25,7 @@ Page({
                 if (res.code === "0") {
                     tips("提交成功", "success");
                     setTimeout(() => {
-                        wx.switchTab({
+                        wx.reLaunch({
                             url: '/pages/problem/problem'
                         });
                     }, 2000);

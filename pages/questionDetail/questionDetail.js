@@ -37,9 +37,9 @@ Page({
       },
       success(res) {
         if (res.code === "0") {
-          _this.setData({
-            question: res.result
-          });
+          // _this.setData({
+          //   question: res.result
+          // });
         } else {
           tips(res.message);
         }

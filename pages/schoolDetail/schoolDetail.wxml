@@ -180,10 +180,12 @@
           <view>
             {{item.commentContent}}
           </view>
-          <view bindtap="praise" data-id="{{item.commentId}}">
-            <text wx:if="{{item.isPraise === 1}}">?</text>
-            <text wx:else>!</text>
-            {{item.countPraise}}
+          <view>
+            <view bindtap="praise" data-id="{{item.commentId}}">
+              <text wx:if="{{item.isPraise === 1}}">?</text>
+              <text wx:else>!</text>
+              {{item.countPraise}}
+            </view>
           </view>
         </view>
       </block>

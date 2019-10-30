@@ -243,7 +243,8 @@
 }
 
 .comment>view:nth-of-type(3) {
-  text-align: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .comment-nav{
