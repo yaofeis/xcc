@@ -1,27 +1,31 @@
 <view>
-    <view class="info">
-        <view class="title">{{question.questionTitle}}</view>
-        <view class="content">{{question.questionDescrib}}</view>
-        <view class="btn">
-            <navigator>?写回答</navigator>
-            <view>关注</view>
-        </view>
+  <view class="info">
+    <view class="title">{{question.questionTitle}}</view>
+    <view class="content">{{question.questionDescrib}}</view>
+    <view class="btn">
+      <navigator url="/pages/schoolComment/schoolComment?id={{question.questionId}}&name={{question.questionTitle}}&type=question">?写回答</navigator>
+      <view wx:if="{{isAttention}}" bindtap="cancelAttention">取消关注</view>
+      <view wx:else bindtap="addAttention">关注</view>
     </view>
-    <view class="comment">
-        <view class="title">回答</view>
+  </view>
+  <view class="comment">
+    <view class="title">回答</view>
+    <view wx:if="{{comment.length > 0}}">
+      <block wx:for="{{comment}}" wx:key="{{item.answerId}}">
         <view>
-            <view>
-                <view class="name">匿名用户</view>
-                <view class="time">2019年9月9日 9:00</view>
-                <view class="content">内容</view>
-                <view class="btn">?12</view>
+          <view class="name">{{item.nickName}}</view>
+          <view class="time">{{item.date}}</view>
+          <view class="content">{{item.ansContent}}</view>
+          <view class="btn">
+            <view bindtap="praise" data-id="{{item.answerId}}">
+              <text wx:if="{{item.isPraise === 1}}">?</text>
+              <text wx:else>!</text> {{item.countPraise || 0}}
             </view>
-            <view>
-                <view class="name">匿名用户</view>
-                <view class="time">2019年9月9日 9:00</view>
-                <view class="content">内容</view>
-                <view class="btn">?12</view>
-            </view>
+          </view>
         </view>
+      </block>
     </view>
+    <view wx:else class="no-comment">暂无回答</view>
+    <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
+  </view>
 </view>

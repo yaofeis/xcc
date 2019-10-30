@@ -169,7 +169,7 @@
     <view class="list">
       <view class="comment-nav">
         <view>评论</view>
-        <navigator url="/pages/schoolComment/schoolComment?id={{info.schoolId}}&name={{info.schoolName}}">写评论</navigator>
+        <navigator url="/pages/schoolComment/schoolComment?id={{info.schoolId}}&name={{info.schoolName}}&type=school">写评论</navigator>
       </view>
       <block wx:if="{{comment.length > 0}}" wx:for="{{comment}}" wx:key="{{item.commentId}}">
         <view class="comment">

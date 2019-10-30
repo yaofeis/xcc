@@ -69,5 +69,18 @@ page{
 }
 
 .comment .btn{
-    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.no-comment{
+  text-align: center;
+  padding: 20rpx 0;
+  color: #ccc;
+}
+
+.bottom{
+  font-size: 24rpx;
+  text-align: center;
+  color: #555555;
 }

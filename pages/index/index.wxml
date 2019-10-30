@@ -57,7 +57,7 @@
             <block wx:for="{{news}}" wx:key="{{item.newsId}}">
                 <navigator url="/pages/newsDetail/newsDetail?id={{item.newsId}}" class="list">
                     <view>
-                        <view>{{item.showContent}}</view>
+                        <view>{{item.showContent}}...</view>
                     </view>
                     <view>
                         <image src="{{item.showImage}}"></image>
