@@ -44,6 +44,9 @@ const api = {
     commentPraise: url + "schoolComment/commentPraise.do?", // 学校评论点赞、取消点赞
     addSubscribe: url + "subscribe/addSubscribe.do?", // 添加预约
     getSchoolImageList: url + "schoolImage/getSchoolImageList.do?", // 获取学校图片列表
+    focusSchool: url + "focusSchool/focusSchool.do?", // 关注、取消关注学校
+    getFocusSchoolList: url + "focusSchool/getFocusSchoolList.do?", // 获取我关注学校的列表
+    isFocusSchool: url + "focusSchool/isFocusSchool.do?", // 判断用户是否关注该学校
 };
 
 module.exports = {

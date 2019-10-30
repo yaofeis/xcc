@@ -9,18 +9,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-    info: {},
-    comment: [],
+    info: {},// 学校信息
+    comment: [],// 评论列表
     total: 0,
     pageNum: 1,
-    isBottom: false,
+    isBottom: false,// 评论列表是否到底
     imgInfo: {
       src: "",
       num: 0
-    },
+    },// 图片数量和展示图片地址
     previewUrl: "",
     isPreview: false,
-    course: {}
+    course: {},// 课程表图片相关
+    isAttention: true,// 是否关注学校
   },
 
   // 获取学校相关信息
@@ -183,6 +184,49 @@ Page({
     wx.navigateBack();
   },
 
+  // 判断是否关注该学校
+  getMySchool(id){
+    let _this = this;
+    http({
+      url: api.isFocusSchool,
+      data: {
+        userId: wx.getStorageSync('userId'),
+        schoolId: id
+      },
+      success(res) {
+        if (res.code === "0") {
+          _this.setData({
+            isAttention: res.result === 1
+          })
+        } else {
+          tips(res.message);
+        }
+      }
+    });
+  },
+
+  // 关注、取消关注
+  attention(){
+    let _this = this;
+    http({
+      url: api.focusSchool,
+      data: {
+        userId: wx.getStorageSync('userId'),
+        schoolId: _this.data.info.schoolId
+      },
+      success(res) {
+        if (res.code === "0") {
+          tips("操作成功", "success");
+          _this.setData({
+            isAttention: !_this.data.isAttention
+          })
+        } else {
+          tips(res.message);
+        }
+      }
+    });
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -190,6 +234,7 @@ Page({
     this.getSchoolDetail(options.id);
     this.getComment(options.id, true);
     this.getImage(options.id);
+    this.getMySchool(options.id);
   },
 
   /**

@@ -13,7 +13,7 @@
           <view wx:else>？未开通教师沟通通道</view>
         </view>
         <view>
-          <view>关注</view>
+          <view bindtap="attention">{{isAttention ? "取消关注" : "关注"}}</view>
           <navigator wx:if="{{info.openSubscribe === 1}}" url="/pages/appointment/appointment?id={{info.schoolId}}">预约沟通</navigator>
         </view>
       </view>
