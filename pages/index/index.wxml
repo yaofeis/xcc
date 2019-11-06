@@ -2,7 +2,7 @@
     <!-- 顶部信息 -->
     <view class="nav">
         <view class="address">
-            <text>?</text>
+            <text class="iconfont icon-weibiaoti-"></text>
             <open-data type="userCity" lang="zh_CN"></open-data>
         </view>
         <view class="search">
@@ -27,7 +27,7 @@
         <view class="title">
             <text>校园报告</text>
             <view class="more">
-                <text>更多></text>
+                <text>更多<text class="iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu-1"></text></text>
             </view>
         </view>
         <view class="content">
@@ -50,7 +50,7 @@
         <view class="title">
             <text>最新事项</text>
             <view class="more">
-                <navigator url="/pages/newsList/newsList">更多></navigator>
+                <navigator url="/pages/newsList/newsList">更多<text class="iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu-1"></text></navigator>
             </view>
         </view>
         <view class="content">
@@ -71,7 +71,7 @@
         <view class="title">
             <text>问答热榜</text>
             <view class="more">
-                <navigator open-type="switchTab" url="/pages/problem/problem">更多></navigator>
+                <navigator open-type="switchTab" url="/pages/problem/problem">更多<text class="iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu-1"></text></navigator>
             </view>
         </view>
         <view class="content">
@@ -80,8 +80,8 @@
                     <view>{{item.questionTitle}}</view>
                     <view>{{item.questionDescrib}}</view>
                     <view>
-                        <view>?{{item.visitCount || 0}}</view>
-                        <view>?{{item.countAnswer || 0}}</view>
+                        <view><text class="iconfont icon-liulan"></text>{{item.visitCount || 0}}</view>
+                        <view><text class="iconfont icon-pinglun"></text>{{item.countAnswer || 0}}</view>
                     </view>
                 </navigator>
             </block>

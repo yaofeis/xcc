@@ -9,8 +9,8 @@
           <view>{{info.schoolName}}</view>
           <view>占地面积：{{info.areaCovered}}平方米</view>
           <view>位置：{{info.address}}</view>
-          <view wx:if="{{info.openSubscribe === 1}}">？已开通教师沟通通道</view>
-          <view wx:else>？未开通教师沟通通道</view>
+          <view wx:if="{{info.openSubscribe === 1}}"><text class="iconfont icon-zhengque"></text>已开通教师沟通通道</view>
+          <view wx:else>未开通教师沟通通道</view>
         </view>
         <view>
           <view bindtap="attention">{{isAttention ? "取消关注" : "关注"}}</view>
@@ -38,7 +38,7 @@
           <view class="gray">学费/学期</view>
         </view>
       </view>
-      <view>？资料通过平台官方认证</view>
+      <view><text class="iconfont icon-zhengque"></text>资料通过平台官方认证</view>
       <view>
         <navigator url="/pages/showImg/showImg?id={{info.schoolId}}&type=all" class="imgBox">
           <image src="{{imgInfo.src}}"></image>
@@ -181,10 +181,9 @@
             {{item.commentContent}}
           </view>
           <view>
-            <view bindtap="praise" data-id="{{item.commentId}}">
-              <text wx:if="{{item.isPraise === 1}}">?</text>
-              <text wx:else>!</text>
-              {{item.countPraise}}
+            <view capture-catch:tap="praise" data-id="{{item.commentId}}">
+              <text class="iconfont {{item.isPraise === 1 ? 'icon-changyongtubiao-mianxing-' : 'icon-changyongtubiao-xianxingdaochu-zhuanqu-'}}"></text>
+              {{item.countPraise || 0}}
             </view>
           </view>
         </view>

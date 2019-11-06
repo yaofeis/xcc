@@ -5,31 +5,53 @@ Page({
    * 页面的初始数据
    */
   data: {
+    pageNum: 1,
+    total: 0,
+    isBottom: false,
     question: []
+  },
+
+  // 获取问题列表
+  init(first) {
+    let _this = this;
+    if (!first && _this.data.pageNum > Math.ceil(_this.data.total / 10)) {
+      _this.setData({
+        isBottom: true
+      });
+      return false;
+    }
+    // 获取问答列表
+    http({
+      url: api.getMyQuestion,
+      data: {
+        pageNum: _this.data.pageNum,
+        pageSize: 10,
+        userId: wx.getStorageSync('userId')
+      },
+      success(res) {
+        if (res.code === "0") {
+          res.result.map(item => {
+            if (item.questionDescrib.length > 50) {
+              item.questionDescrib = item.questionDescrib.substring(0, 50) + "...";
+            }
+          });
+          let list = _this.data.question.concat(res.result);
+          _this.setData({
+            question: list,
+            total: res.total
+          });
+        } else {
+          tips(res.message);
+        }
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let _this = this;
-    http({
-      url: api.getMyQuestion,
-      data: {
-        pageNum: 1,
-        pageSize: 20,
-        userId: wx.getStorageSync('userId')
-      },
-      success(res) {
-        if (res.code === "0") {
-          _this.setData({
-            question: res.result
-          })
-        } else {
-          tips(res.message);
-        }
-      }
-    });
+    this.init(true);
   },
 
   /**
@@ -71,7 +93,10 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.setData({
+      pageNum: this.data.pageNum + 1
+    });
+    this.init(false);
   },
 
   /**

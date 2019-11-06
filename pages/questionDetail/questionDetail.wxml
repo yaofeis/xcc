@@ -3,7 +3,7 @@
     <view class="title">{{question.questionTitle}}</view>
     <view class="content">{{question.questionDescrib}}</view>
     <view class="btn">
-      <navigator url="/pages/schoolComment/schoolComment?id={{question.questionId}}&name={{question.questionTitle}}&type=question">?写回答</navigator>
+      <navigator url="/pages/schoolComment/schoolComment?id={{question.questionId}}&name={{question.questionTitle}}&type=question"><text class="iconfont icon-xiezi"></text>写回答</navigator>
       <view wx:if="{{isAttention}}" bindtap="cancelAttention">取消关注</view>
       <view wx:else bindtap="addAttention">关注</view>
     </view>
@@ -18,8 +18,8 @@
           <view class="content">{{item.ansContent}}</view>
           <view class="btn">
             <view bindtap="praise" data-id="{{item.answerId}}">
-              <text wx:if="{{item.isPraise === 1}}">?</text>
-              <text wx:else>!</text> {{item.countPraise || 0}}
+              <text class="iconfont {{item.isPraise === 1 ? 'icon-changyongtubiao-mianxing-' : 'icon-changyongtubiao-xianxingdaochu-zhuanqu-'}}"></text>
+              {{item.countPraise || 0}}
             </view>
           </view>
         </view>

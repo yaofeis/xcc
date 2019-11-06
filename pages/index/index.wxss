@@ -174,3 +174,7 @@
   padding-right: 80rpx;
   color: rgb(37, 37, 37);
 }
+
+.problem-list>view:nth-of-type(3)>view>text{
+  padding-right: 5rpx;
+}

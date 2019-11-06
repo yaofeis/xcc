@@ -70,6 +70,10 @@ page{
   color: rgb(37, 37, 37);
 }
 
+.info>view>text{
+  padding-right: 5rpx;
+}
+
 .bottom{
   font-size: 24rpx;
   text-align: center;

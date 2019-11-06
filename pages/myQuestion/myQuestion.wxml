@@ -1,14 +1,14 @@
 <view class="box">
   <view class="listBox">
     <block wx:for="{{question}}" wx:key="{{item.questionId}}">
-      <view class="list">
+      <navigator url="/pages/questionDetail/questionDetail?id={{item.questionId}}" class="list">
         <view class="title">{{item.questionTitle}}</view>
         <view class="content">{{item.questionDescrib}}</view>
         <view class="info">
-          <view>?{{item.visitCount}}</view>
-          <view>?{{item.countAnswer}}</view>
+           <view><text class="iconfont icon-liulan"></text>{{item.visitCount || 0}}</view>
+          <view><text class="iconfont icon-pinglun"></text>{{item.countAnswer || 0}}</view>
         </view>
-      </view>
+      </navigator>
     </block>
   </view>
 </view>

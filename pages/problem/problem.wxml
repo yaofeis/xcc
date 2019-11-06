@@ -2,7 +2,7 @@
   <!-- 顶部导航 -->
   <view class="nav">
     <view>问答</view>
-    <navigator url="/pages/putQuestion/putQuestion">?提问</navigator>
+    <navigator url="/pages/putQuestion/putQuestion"><text class="iconfont icon-wenhao"></text>提问</navigator>
   </view>
   <!-- 搜索 -->
   <view class="search">
@@ -16,8 +16,8 @@
         <view class="title">{{item.questionTitle}}</view>
         <view class="content">{{item.questionDescrib}}</view>
         <view class="info">
-          <view>?{{item.visitCount || 0}}</view>
-          <view>?{{item.countAnswer || 0}}</view>
+          <view><text class="iconfont icon-liulan"></text>{{item.visitCount || 0}}</view>
+          <view><text class="iconfont icon-pinglun"></text>{{item.countAnswer || 0}}</view>
         </view>
       </navigator>
     </block>

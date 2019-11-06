@@ -14,6 +14,7 @@
   background: white;
   margin-bottom: 20rpx;
   padding: 20rpx;
+  height: 250rpx;
 }
 
 .title {
@@ -29,6 +30,7 @@
   line-height: 1.5;
   color: #4b4b4b;
   padding: 20rpx 0;
+  height: 125rpx;
 }
 
 .info {
@@ -38,4 +40,8 @@
 .info>view:nth-of-type(1) {
   padding-right: 80rpx;
   color: rgb(37, 37, 37);
+}
+
+.info>view>text{
+  padding-right: 5rpx;
 }

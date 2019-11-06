@@ -8,11 +8,11 @@
   </view>
   <view class="list">
     <navigator url="/pages/myQuestion/myQuestion">
-      <text>?</text>
+      <text class="iconfont icon-wenhao"></text>
       <text>我的问答</text>
     </navigator>
     <navigator url="/pages/mySchool/mySchool">
-      <text>?</text>
+      <text class="iconfont icon-xuexiao"></text>
       <text>我的校园</text>
     </navigator>
   </view>

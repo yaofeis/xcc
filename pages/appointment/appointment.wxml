@@ -9,7 +9,7 @@
           <view>{{info.schoolName}}</view>
           <view>占地面积：{{info.areaCovered}}平方米</view>
           <view>位置：{{info.address}}</view>
-          <view>？已开通教师沟通通道</view>
+          <view><text class="iconfont icon-zhengque"></text>已开通教师沟通通道</view>
         </view>
       </view>
     </view>

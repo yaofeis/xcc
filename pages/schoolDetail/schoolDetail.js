@@ -96,7 +96,7 @@ Page({
   // 点赞和取消点赞
   praise(e) {
     let _this = this;
-    let id = e.target.dataset.id;
+    let id = e.currentTarget.dataset.id;
     http({
       url: api.commentPraise,
       data: {
