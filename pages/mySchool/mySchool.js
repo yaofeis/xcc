@@ -1,4 +1,4 @@
-// pages/mySchool/mySchool.js
+const { http, api, tips } = require('../../utils/util.js');
 Page({
 
   /**
@@ -12,7 +12,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    http({
+      url: api.getFocusSchoolList,
+      data: {
+        pageNum: 1,
+        pageSize: 10,
+        userId: wx.getStorageSync('userId')
+      },
+      success(res) {
+        if (res.code === "0") {
+          res.result.map(item => {
+            if (item.questionDescrib.length > 50) {
+              item.questionDescrib = item.questionDescrib.substring(0, 50) + "...";
+            }
+          });
+          let list = _this.data.question.concat(res.result);
+          _this.setData({
+            question: list,
+            total: res.total
+          });
+        } else {
+          tips(res.message);
+        }
+      }
+    });
   },
 
   /**
