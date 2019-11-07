@@ -1,22 +1,23 @@
 <view class="box">
   <view class="listBox">
-    <block wx:for="{{[1,2,3,4]}}" wx:key="*this">
-      <navigator url="/pages/schoolDetail/schoolDetail" class="list">
+    <block wx:for="{{school}}" wx:key="{{item.schoolId}}">
+      <navigator url="/pages/schoolDetail/schoolDetail?id={{item.schoolId}}" class="list">
         <view>
-          <image src="../../images/1.jpg"></image>
+          <image src="{{item.schoolIcon}}"></image>
           <view>
-            <view class="title">成都天府第二幼儿园</view>
+            <view class="title">{{item.schoolName}}</view>
             <view class="type">
-              <view>?75</view>
-              <view>幼儿园</view>
+              <view><text class="iconfont icon-pinglun"></text>{{item.countComment}}</view>
+              <view>{{item.schoolType}}</view>
             </view>
           </view>
         </view>
         <view>
-          <text>成都市剑南大道444号</text>
-          <text>3.5km</text>
+          <text>{{item.schoolAddress}}</text>
+          <text>{{item.distance}}km</text>
         </view>
       </navigator>
     </block>
   </view>
+  <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
 </view>

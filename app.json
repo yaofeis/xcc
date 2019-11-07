@@ -1,6 +1,8 @@
 {
   "pages": [
+    
     "pages/index/index",
+    "pages/search/search",
     "pages/schoolComment/schoolComment",
     "pages/questionDetail/questionDetail",
     "pages/newsList/newsList",

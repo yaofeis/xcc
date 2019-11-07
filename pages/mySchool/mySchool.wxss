@@ -49,6 +49,10 @@
     color: #28b8a1;
 }
 
+.type > view:nth-of-type(1)>text{
+    padding-right: 5rpx;
+}
+
 .type > view:nth-of-type(2){
     color: #8e8b8d;
     font-size: 28rpx;
@@ -58,4 +62,11 @@
     color: #8e8b8d;
     padding-top: 20rpx;
     font-size: 28rpx;
+}
+
+.bottom{
+    font-size: 24rpx;
+    text-align: center;
+    color: #555555;
+    padding: 15rpx 0;
 }

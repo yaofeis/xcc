@@ -10,7 +10,7 @@ Page({
     isBottom: false,// 评论列表是否到底
     pageNum: 1,
     total: 0,
-    isAttention: false // 是否关注
+    isAttention: 1// 是否关注 1关注 2没关注
   },
 
   // 问题访问
@@ -34,12 +34,14 @@ Page({
     http({
       url: api.getQuestionDetail,
       data: {
-        questionId: id
+        questionId: id,
+        userId: wx.getStorageSync('userId')
       },
       success(res) {
         if (res.code === "0") {
           _this.setData({
-            question: res.result
+            question: res.result,
+            isAttention: res.result.isFocus === 1
           });
         } else {
           tips(res.message);
@@ -62,7 +64,8 @@ Page({
       data: {
         pageNum: _this.data.pageNum,
         pageSize: 10,
-        questionId: id
+        questionId: id,
+        userId: wx.getStorageSync('userId')
       },
       success(res) {
         if (res.code === "0") {
@@ -91,7 +94,7 @@ Page({
     });
   },
 
-  // 添加关注
+  // 添加、取消关注
   addAttention(){
     let _this = this;
     http({
@@ -102,10 +105,10 @@ Page({
       },
       success(res) {
         if (res.code === "0") {
-          tips("关注成功", "success");
+          tips("操作成功", "success");
           _this.setData({
-            isAttention: true
-          });
+            isAttention: !_this.data.isAttention
+          })
         } else {
           tips(res.message);
         }
