@@ -8,11 +8,19 @@ Page({
     background: [],
     news: [],
     question: [],
-    school: []
+    school: [],
+    successNum: 0
   },
-  onLoad: function() {
-    let _this = this;
-    // 获取用户信息
+
+  // go search web,this type is 'school'
+  goSearch() {
+    wx.navigateTo({
+      url: '/pages/search/search?type=1',
+    })
+  },
+
+  // 获取用户信息并修改(后台静默操作，不显示加载)
+  modifyUser() {
     wx.getSetting({
       success: res => {
         if (res.authSetting['scope.userInfo']) {
@@ -32,14 +40,17 @@ Page({
                     tips(res.message);
                   }
                 }
-              });
+              }, false);
             }
           })
         }
       }
     });
+  },
 
-    // 获取轮播图
+  // 获取轮播图
+  getBanner() {
+    let _this = this;
     http({
       url: api.getBannerList,
       data: {
@@ -48,6 +59,7 @@ Page({
         status: 1
       },
       success(res) {
+        _this.hideLoad();
         if (res.code === "0") {
           _this.setData({
             background: res.result
@@ -56,8 +68,12 @@ Page({
           tips(res.message);
         }
       }
-    });
-    // 获取新闻列表
+    }, false);
+  },
+
+  // 获取新闻列表
+  getNews() {
+    let _this = this;
     http({
       url: api.getNewsList,
       data: {
@@ -65,6 +81,7 @@ Page({
         pageSize: 2
       },
       success(res) {
+        _this.hideLoad();
         if (res.code === "0") {
           _this.setData({
             news: res.result
@@ -73,8 +90,12 @@ Page({
           tips(res.message);
         }
       }
-    });
-    // 获取问答列表
+    }, false);
+  },
+
+  // 获取问答列表
+  getQuestion() {
+    let _this = this;
     http({
       url: api.getQuestionList,
       data: {
@@ -82,6 +103,7 @@ Page({
         pageSize: 2
       },
       success(res) {
+        _this.hideLoad();
         if (res.code === "0") {
           res.result.map(item => {
             if (item.questionDescrib.length > 50) {
@@ -95,8 +117,12 @@ Page({
           tips(res.message);
         }
       }
-    });
-    // 获取学校列表
+    }, false);
+  },
+
+  // 获取学校列表
+  getSchool() {
+    let _this = this;
     http({
       url: api.getSchoolList,
       data: {
@@ -104,6 +130,7 @@ Page({
         pageSize: 2
       },
       success(res) {
+        _this.hideLoad();
         if (res.code === "0") {
           _this.setData({
             school: res.result
@@ -112,6 +139,31 @@ Page({
           tips(res.message);
         }
       }
+    }, false);
+  },
+
+  // 显示加载中，当数据加载完毕取消显示
+  hideLoad() {
+    let _this = this;
+    let num = _this.data.successNum + 1;
+    _this.setData({
+      successNum: num
     });
+    if (num === 4) {
+      wx.hideLoading();
+    }
+  },
+
+  onLoad: function() {
+    let _this = this;
+    wx.showLoading({
+      title: '加载中...',
+      mask: true
+    });
+    _this.modifyUser();
+    _this.getBanner();
+    _this.getNews();
+    _this.getQuestion();
+    _this.getSchool();
   }
 });

@@ -2,25 +2,31 @@
   <!-- 顶部导航 -->
   <view class="nav">
     <view>问答</view>
-    <navigator url="/pages/putQuestion/putQuestion"><text class="iconfont icon-wenhao"></text>提问</navigator>
+    <navigator url="/pages/putQuestion/putQuestion">
+      <text class="iconfont icon-wenhao"></text>提问</navigator>
   </view>
   <!-- 搜索 -->
-  <view class="search">
+  <view class="search" bindtap="goSearch">
     <icon type="search" size="15" color="#28B8A1"></icon>
-    <text>请输入校园全称</text>
+    <text>{{text}}</text>
   </view>
   <!-- 问答列表 -->
   <view class="listBox">
-    <block wx:for="{{question}}" wx:key="{{item.questionId}}">
-      <navigator url="/pages/questionDetail/questionDetail?id={{item.questionId}}" class="list">
-        <view class="title">{{item.questionTitle}}</view>
-        <view class="content">{{item.questionDescrib}}</view>
-        <view class="info">
-          <view><text class="iconfont icon-liulan"></text>{{item.visitCount || 0}}</view>
-          <view><text class="iconfont icon-pinglun"></text>{{item.countAnswer || 0}}</view>
-        </view>
-      </navigator>
+    <block wx:if="{{question.length > 0}}">
+      <block wx:for="{{question}}" wx:key="{{item.questionId}}">
+        <navigator url="/pages/questionDetail/questionDetail?id={{item.questionId}}" class="list">
+          <view class="title">{{item.questionTitle}}</view>
+          <view class="content">{{item.questionDescrib}}</view>
+          <view class="info">
+            <view>
+              <text class="iconfont icon-liulan"></text>{{item.visitCount || 0}}</view>
+            <view>
+              <text class="iconfont icon-pinglun"></text>{{item.countAnswer || 0}}</view>
+          </view>
+        </navigator>
+      </block>
+      <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
     </block>
-    <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
+    <view wx:else class="bottom">暂无数据</view>
   </view>
 </view>

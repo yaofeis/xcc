@@ -1,0 +1,17 @@
+<view class="content">
+  <block wx:if="{{school.length > 0}}">
+  <block wx:for="{{school}}" wx:key="{{item.schoolId}}">
+    <navigator url="/pages/schoolDetail/schoolDetail?id={{item.schoolId}}" class="list">
+      <view>
+        <view>{{item.schoolName}}</view>
+        <view>报告包括：师资水平、周边环境、校园环境、伙食情况等</view>
+      </view>
+      <view>
+        <image src="{{item.icon}}"></image>
+      </view>
+    </navigator>
+  </block>
+  <view wx:if="{{isBottom}}" class="bottom">我可是一个有底线的人!</view>
+  </block>
+  <view wx:else class="bottom">暂无数据</view>
+</view>

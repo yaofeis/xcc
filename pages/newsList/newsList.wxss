@@ -43,19 +43,9 @@ page{
     border-radius: 10rpx;
 }
 
-.list>view:nth-of-type(2)>text {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: white;
-    background: #ff2458;
-    font-size: 30rpx;
-    padding: 5rpx 10rpx;
-    border-radius: 10rpx;
-}
-
 .bottom{
     font-size: 24rpx;
     text-align: center;
     color: #555555;
+    padding-bottom: 10rpx;
 }

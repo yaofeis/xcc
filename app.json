@@ -1,7 +1,7 @@
 {
   "pages": [
-    
     "pages/index/index",
+    "pages/schoolList/schoolList",
     "pages/search/search",
     "pages/schoolComment/schoolComment",
     "pages/questionDetail/questionDetail",
@@ -14,7 +14,6 @@
     "pages/mine/mine",
     "pages/putQuestion/putQuestion",
     "pages/problem/problem",
-    "pages/logs/logs",
     "pages/newsDetail/newsDetail"
   ],
   "window": {

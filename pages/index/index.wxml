@@ -5,7 +5,7 @@
             <text class="iconfont icon-weibiaoti-"></text>
             <open-data type="userCity" lang="zh_CN"></open-data>
         </view>
-        <view class="search">
+        <view class="search" bindtap="goSearch">
             <icon type="search" size="15" color="#28B8A1"></icon>
             <text>请输入校园全称</text>
         </view>
@@ -27,7 +27,7 @@
         <view class="title">
             <text>校园报告</text>
             <view class="more">
-                <text>更多<text class="iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu-1"></text></text>
+                <navigator url="/pages/schoolList/schoolList">更多<text class="iconfont icon-changyongtubiao-xianxingdaochu-zhuanqu-1"></text></navigator>
             </view>
         </view>
         <view class="content">

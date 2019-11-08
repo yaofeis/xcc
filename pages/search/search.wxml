@@ -1,2 +1,25 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view>
+<!-- bindconfirm -->
+  <view class="search">
+    <view>
+      <icon type="search" size="15" color="#28B8A1" bindtap="search"></icon>
+      <input type="text" maxlength="20" auto-focus="true" focus="true" confirm-type="search" placeholder='搜索' bindinput="valueChange" bindconfirm="search"></input>
+    </view>
+    <text bindtap="goBack">取消</text>
+  </view>
+  
+  <view style="background: #ebebeb;height: 10rpx;"></view>
+
+  <view class="history">
+    <view>
+      <text>搜索历史</text>
+      <text class="iconfont icon-shanchu" bindtap='clearHistory'></text>  
+    </view>
+    <view>
+      <block wx:if="{{history.length > 0}}">
+        <view wx:for="{{history}}" wx:key="*this" bindtap="historySearch" data-val="{{item}}">{{item}}</view>
+      </block>
+      <view class="no-history" wx:else>暂无搜索历史</view>
+    </view>
+  </view>
+</view>

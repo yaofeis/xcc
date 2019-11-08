@@ -1,0 +1,47 @@
+page{
+  background: #ebebeb;
+}
+
+.list {
+  display: flex;
+  padding: 20rpx;
+  background: white;
+  margin-bottom: 20rpx;
+}
+
+.list>view:nth-of-type(1) {
+  width: 65%;
+  padding-right: 10rpx;
+}
+
+.list>view:nth-of-type(2) {
+  width: 35%;
+  position: relative;
+}
+
+.list>view:nth-of-type(1)>view:nth-of-type(1) {
+  font-size: 30rpx;
+  color: #101010;
+}
+
+.list>view:nth-of-type(1)>view:nth-of-type(2) {
+  font-size: 28rpx;
+  color: #bebebe;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  padding-top: 20rpx;
+}
+
+.list>view:nth-of-type(2)>image {
+  width: 100%;
+  height: 180rpx;
+  border-radius: 10rpx;
+}
+
+.bottom{
+    font-size: 24rpx;
+    text-align: center;
+    color: #555555;
+    padding: 10rpx 0;
+}
