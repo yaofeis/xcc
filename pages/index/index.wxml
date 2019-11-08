@@ -11,7 +11,7 @@
         </view>
         <view class="introduce">
             <view>选校有问题，就上幼儿PAI</view>
-            <view>已完全覆盖成都幼儿园，共整理学校报告4273份</view>
+            <view>{{platInfo}}</view>
         </view>
     </view>
     <!-- 轮播 -->

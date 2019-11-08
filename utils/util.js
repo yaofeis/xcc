@@ -5,7 +5,7 @@ const http = (params, load = true) => {
   });
   wx.request({
     url: params.url, //仅为示例，并非真实的接口地址
-    data: params.data,
+    data: params.data || {},
     header: {
       'content-type': 'application/json' // 默认值
     },
@@ -52,6 +52,7 @@ const api = {
   addFocusQuestion: url + "focusQuestion/addFocusQuestion.do?", // 添加问题关注
   deleteFocusQuestion: url + "focusQuestion/deleteFocusQuestion.do?", // 取消问题关注
   praiseAnswer: url + "answer/praiseAnswer.do?", // 问答评论点赞、取消点赞
+  getSetting: url + "setting/getSettingById.do" // 获取平台信息
 };
 
 module.exports = {

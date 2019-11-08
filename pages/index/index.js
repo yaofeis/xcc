@@ -9,7 +9,8 @@ Page({
     news: [],
     question: [],
     school: [],
-    successNum: 0
+    successNum: 0,
+    platInfo: ""
   },
 
   // go search web,this type is 'school'
@@ -142,6 +143,24 @@ Page({
     }, false);
   },
 
+  // 获取平台信息
+  getSetting(){
+    let _this = this;
+    http({
+      url: api.getSetting,
+      success(res) {
+        _this.hideLoad();
+        if (res.code === "0") {
+          _this.setData({
+            platInfo: res.result.platInfo
+          });
+        } else {
+          tips(res.message);
+        }
+      }
+    }, false);
+  },
+
   // 显示加载中，当数据加载完毕取消显示
   hideLoad() {
     let _this = this;
@@ -149,7 +168,7 @@ Page({
     _this.setData({
       successNum: num
     });
-    if (num === 4) {
+    if (num === 5) {
       wx.hideLoading();
     }
   },
@@ -165,5 +184,6 @@ Page({
     _this.getNews();
     _this.getQuestion();
     _this.getSchool();
+    _this.getSetting();
   }
 });
